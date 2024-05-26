@@ -1,0 +1,95 @@
+.index {
+    background-color: #F5F7FB;
+    height: 100vh;
+    padding-bottom: 130px;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    :global(.taroify-popup--top) {
+        top: 82px;
+    }
+
+    .scrollBox {
+        padding-left: 16px;
+        gap: 16px;
+        overflow-x: auto;
+        margin-top: 24px;
+        white-space: nowrap;
+    }
+
+    .btn {
+        padding: 16px;
+        font-size: 24rpx;
+        color: #00754A;
+        text-align: center;
+        border: 1px solid #99CAB6;
+        border-radius: 16px;
+        display: inline-block;
+        margin-right: 16px;
+        width: fit-content;
+        box-sizing: border-box;
+    }
+
+    .active {
+        background-color: #11BD8C;
+        color: #fff;
+        border: none;
+    }
+
+    .box {
+        padding: 44px 22px;
+        padding-bottom: 0;
+        overflow-y: auto;
+        box-sizing: border-box;
+        height: calc(100vh - 320px);
+    }
+
+    .primaryColor {
+        color: #52B48D;
+    }
+
+    .title {
+        font-weight: 500;
+        font-size: 36rpx;
+        color: #000;
+        margin-bottom: 24px;
+    }
+
+    .ansItem {
+        padding-bottom: 16px;
+        border-bottom: 1px solid #E3E4E5;
+        margin-bottom: 32px;
+    }
+
+    .ansBtn {
+        padding: 16px 54px;
+        font-size: 24rpx;
+        color: #999999;
+        text-align: center;
+        background: #F5F7FB;
+        border-radius: 16px;
+        box-sizing: border-box;
+        width: fit-content;
+        margin-bottom: 16px;
+    }
+
+    .ansBtnActive {
+        color: #24815C;
+        border: 1px solid #99CAB6;
+        background: #DEF6EB;
+    }
+
+    .save {
+        background-color: #fff;
+        height: 128px;
+        width: 100vw;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+
+    .btnbox {
+        display: flex;
+    }
+}

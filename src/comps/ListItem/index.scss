@@ -1,0 +1,42 @@
+.list-item {
+  padding: 38px 30px;
+  position: relative;
+  box-sizing: border-box;
+  color: #333;
+  display: flex;
+  height: 104px;
+
+  .info-title {
+    font-size: 27px;
+    line-height: 38px;
+    letter-spacing: 0px;
+    color: #1C2023;
+    margin-right: 18px;
+
+  }
+
+  .info-node {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 31px;
+    letter-spacing: 0px;
+    color: #88889C;
+    margin-top: 5px;
+    margin-right: 18px;
+
+  }
+
+  .left-box {
+    font-size: 28rpx;
+    color: #1C2023;
+    margin-right: 18px;
+    line-height: 54px;
+    width: 248px;
+  }
+
+  .right {
+    align-self: center;
+    font-size: 26rpx;
+    color: #1C2023;
+  }
+}

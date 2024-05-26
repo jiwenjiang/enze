@@ -1,0 +1,92 @@
+.index {
+  height: 100vh;
+  position: relative;
+  --space: 55px;
+  --primary-color: #ffd340;
+  --notify-warning-background-color: var(--primary-color);
+  padding: 24px;
+
+  .list-wrap {
+    padding-top: 20px;
+
+    .child-info {
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 10px;
+      box-sizing: border-box;
+      padding: 36px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      height: 152px;
+      border-radius: 24px;
+      margin-bottom: 20px;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      .left {
+        display: flex;
+        align-items: center;
+
+        .head {
+          width: 80px;
+          height: 80px;
+        }
+
+        .gender {
+          width: 20px;
+          height: 20px;
+        }
+
+        .text-info {
+          margin-left: 32px;
+          display: flex;
+          flex-direction: column;
+
+          .name {
+            font-size: 30rpx;
+            color: #1C2023;
+          }
+
+          .birthday {
+            margin-top: 6px;
+            font-size: 24px;
+            color: #88889c;
+          }
+        }
+      }
+
+      .action {
+        box-sizing: border-box;
+        padding: 12px;
+        width: 60px;
+        height: 60px;
+
+        &.edit {
+          margin-left: 40px;
+        }
+      }
+    }
+
+    .listTitle {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+  }
+
+  .actions {
+    text-align: center;
+  }
+
+  .add {
+    height: 152px;
+    width: 100%;
+  }
+
+}

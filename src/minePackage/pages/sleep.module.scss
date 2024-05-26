@@ -1,0 +1,243 @@
+.index {
+    --primary-color: #ffd340;
+}
+
+.head {
+    display: flex;
+    font-size: 28px;
+    justify-content: space-between;
+    align-items: center;
+
+    .rukouItem {
+        height: 136px;
+    }
+
+    .changeMonth {
+        padding: 12px 24px;
+        border-radius: 28px;
+        border: 1px solid #00754A;
+        color: #00754A;
+    }
+
+    .xiala {
+        width: 24px;
+        height: 18px;
+    }
+
+    .jieshao {
+        color: #666666;
+    }
+}
+
+.body {
+    padding-top: 30px;
+
+    .riliHeads {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        /* 创建7列，每列占据相等的空间 */
+        font-size: 30rpx;
+    }
+
+    .riliBody {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        /* 创建7列，每列占据相等的空间 */
+    }
+
+    .riliItem {
+        font-size: 26px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        color: #666;
+    }
+
+    .weijilu {
+        color: #ccc;
+    }
+
+    .yijilu {
+        color: #167B56;
+    }
+
+    .active {
+        color: #167B56;
+        border-radius: 16rpx;
+        background-color: #E0FFF4;
+    }
+}
+
+.grayBtn {
+    background-color: #B3B3B3;
+}
+
+.title {
+    padding: 20px;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 40px;
+        background-color: var(--primary-color);
+        position: absolute;
+        left: 0;
+    }
+}
+
+.sleepItem {
+    background: #F5F7FB;
+    box-shadow: 0rpx 0rpx 8rpx 0rpx rgba(0, 183, 73, 0.1);
+    border-radius: 28rpx;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+
+    .sleepItemRow {
+        background-color: transparent;
+    }
+}
+
+.list {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn {
+    border: 1px solid var(--primary-color);
+    padding: 12px 12px;
+    border-radius: 28px;
+    width: 220px;
+    text-align: center;
+    color: var(--primary-color);
+    margin: 0 auto;
+    margin-top: 15px;
+    background-color: #fff;
+}
+
+.btn2 {
+    background: #DEF6EB;
+    border-radius: 16rpx 16rpx 16rpx 16rpx;
+    border: 2rpx solid #99CAB6;
+    color: #24815C;
+    padding: 12px 12px;
+    width: 466px;
+}
+
+.kvbox {
+    height: 100px;
+    display: flex;
+    border-bottom: 1px solid #E3E4E5;
+    margin: 0 30px;
+    align-items: center;
+    font-size: 26rpx;
+    color: #1C2023;
+    transform: translateY(-10rpx);
+    box-sizing: border-box;
+    justify-content: space-between;
+
+    .k {
+        width: 180px;
+        margin-right: 50px;
+        font-size: 28rpx;
+        color: #666666;
+    }
+
+    .v {
+        color: #000000;
+    }
+}
+
+.sleepBtnBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    gap: 20px;
+
+    .btn2 {
+        width: 238px;
+        height: 68px;
+        border-radius: 28px;
+        box-sizing: border-box;
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btnPrimary {
+        background-color: var(--primary-color);
+        width: 238px;
+        height: 68px;
+        border-radius: 28px;
+        box-sizing: border-box;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.titlebg {
+    font-weight: 600;
+    font-size: 28rpx;
+    color: #000000;
+    position: relative;
+    width: fit-content;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding-left: 22px;
+
+    &::after {
+        width: 500px;
+        content: '';
+        position: absolute;
+        height: 24rpx;
+        background: linear-gradient(270deg, #99E49A 0%, rgba(153, 228, 154, 0) 100%);
+        right: 0;
+        bottom: 34px;
+        opacity: 0.6;
+    }
+}
+
+.titlebg2 {
+    font-weight: 600;
+    font-size: 28rpx;
+    color: #000000;
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding-left: 22px;
+    margin-top: 30px;
+
+    &::after {
+        width: 500px;
+        content: '';
+        position: absolute;
+        height: 24rpx;
+        background: linear-gradient(270deg, #99E49A 0%, rgba(153, 228, 154, 0) 100%);
+        right: 0;
+        bottom: 4px;
+        opacity: 0.6;
+    }
+}
+
+.titlebg3 {
+    font-weight: 600;
+    font-size: 28rpx;
+    padding-left: 22px;
+    color: #000000;
+}

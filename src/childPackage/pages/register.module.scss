@@ -1,0 +1,95 @@
+.index {
+    --primary-color: #f2b04f;
+    --text-color: #112950;
+    background-color: #fff;
+}
+
+.picBox {
+    display: flex;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.pic {
+    width: 100px;
+    height: 100px;
+    margin: 0 16px;
+}
+
+.clear {
+    position: absolute;
+    left: 101rpx;
+    top: -8rpx;
+}
+
+.danjuBox {
+    height: 144px;
+    border-radius: 16px;
+    background-color: #efefef;
+    margin-top: 16px;
+    display: flex;
+    font-size: 28px;
+    color: var(--text-color);
+    align-items: center;
+
+    .addIcon {
+        width: 130px;
+        height: 130px;
+        font-size: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.img {
+    margin-top: 3em;
+}
+
+.cardBox {
+    background-color: transparent;
+    padding: 20PX;
+    padding-bottom: 20px;
+}
+
+.card {
+    background-color: #fff;
+    background: #ffffff;
+    box-shadow: 2PX 2PX 4PX 0PX rgba(24, 24, 24, 0.05);
+    border: 1PX solid #f0f0f0;
+    padding: 5PX 15PX;
+    font-size: 13PX;
+    border-radius: 8PX;
+    padding-bottom: 20px;
+
+    .title {
+        font-size: 15PX;
+        font-weight: bold;
+        color: #181818;
+        height: 46PX;
+        display: flex;
+        align-items: center;
+        border-bottom: 1PX solid #efefef;
+        margin-bottom: 15PX;
+
+        .imgIcon {
+            width: 20PX;
+            height: 20PX;
+        }
+    }
+
+    .kv {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15PX;
+        padding: 0 8PX;
+    }
+
+    .k {
+        color: #7f7f7f;
+    }
+
+    .v {
+        color: #181818;
+    }
+}

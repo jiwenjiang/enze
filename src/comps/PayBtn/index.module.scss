@@ -1,0 +1,52 @@
+.payBox {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.payCard {
+  width: calc(50% - 15rpx);
+  height: 140rpx;
+  background: #FFFFFF;
+  box-shadow: 0rpx 8rpx 20rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 32rpx 32rpx 32rpx 32rpx;
+
+  .payCardTop {
+    padding: 0 24rpx;
+    font-weight: 500;
+    font-size: 32rpx;
+    color: #3D3D3D;
+    line-height: 48rpx;
+    height: 84rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 8rpx;
+
+    .payCardTitle {
+      margin-right: 34rpx;
+      white-space: nowrap;
+    }
+  }
+
+  .payCardDesc {
+    background-color: rgba(250, 250, 250, 0.5);
+    font-weight: 400;
+    font-size: 24rpx;
+    color: #999999;
+    height: 56rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 20rpx;
+  }
+
+  .choose {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.active {
+  background: #E7F8E7;
+}

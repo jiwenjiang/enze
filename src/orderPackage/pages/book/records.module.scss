@@ -1,0 +1,189 @@
+@mixin main-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--main-text);
+}
+
+.index {
+    --gray: #fafafa;
+    --primary-color: #f2b04f;
+    --purple: #635DF7;
+    --blue: #78A4FA;
+    --green: #06CC76;
+    --red: #F44336;
+    --main-text: #112950;
+    --sub-text: #615A53;
+    --size-sm: 24px;
+
+    min-height: 100vh;
+    background-color: var(--gray);
+    padding-bottom: 32px;
+
+    .bizTypes {
+        box-sizing: border-box;
+        padding: 32px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: var(--size-sm);
+        overflow-x: auto;
+        width: 100vw;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--sub-text);
+
+            &.active {
+                color: var(--main-text);
+                font-weight: bold;
+
+                .border {
+                    opacity: 1;
+                }
+            }
+
+            .text {
+                padding-bottom: 12px;
+            }
+
+            .border {
+                width: 48px;
+                height: 4px;
+                background-color: var(--purple);
+                border-radius: 2px;
+                opacity: 0;
+            }
+        }
+    }
+
+    .noData {
+        box-sizing: border-box;
+        padding: 40px 0;
+        text-align: center;
+        @include main-text;
+    }
+
+    .cardBox {
+        padding: 0 40px 24px;
+
+        .card {
+            background-color: #fff;
+            background: #ffffff;
+            box-shadow: 2PX 2PX 4PX 0PX rgba(24, 24, 24, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .child {
+                    display: flex;
+                    align-items: center;
+
+                    .icon {
+                        width: 48px;
+                    }
+
+                    .name {
+                        margin-left: 16px;
+                        @include main-text;
+                    }
+                }
+
+                .status {
+                    width: 136px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: var(--size-sm);
+
+                    .icon {
+                        width: 24px;
+                    }
+
+                    .pending {
+                        color: var(--purple);
+                    }
+
+                    .reviewed,
+                    .waitingstart {
+                        color: var(--blue);
+                    }
+
+                    .confirmed {
+                        color: var(--green);
+                        font-weight: bold;
+                    }
+
+                    .rejected {
+                        color: var(--red);
+                    }
+                }
+            }
+
+            .biztype {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                .icon {
+                    width: 48px;
+                }
+
+                .text {
+                    margin-left: 16px;
+                    @include main-text;
+                }
+            }
+
+            .reserveDetail {
+                background-color: var(--gray);
+                box-sizing: border-box;
+                padding: 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: var(--size-sm);
+                    color: var(--sub-text);
+
+                    .bottom {
+                        margin-top: 16px;
+                    }
+                }
+
+                .action {
+                    .btn {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 128px;
+                        height: 52px;
+                        border-radius: 999em;
+                        background-color: var(--primary-color);
+                        color: #fff;
+                        font-size: var(--size-sm);
+                    }
+
+                    .location {
+                        padding: var(--size-sm);
+
+                        .icon {
+                            width: 32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

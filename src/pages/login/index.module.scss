@@ -1,0 +1,105 @@
+.box {
+  background: #f9fbfc;
+  padding: 28PX 15PX 15PX 15PX;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+  --primary-color: #ffd340;
+}
+
+.head {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.MsoNormal {
+  margin-bottom: 15px;
+  text-indent: 2em;
+
+  .subTitle {
+    font-weight: bold;
+  }
+}
+
+.body {
+  padding: 20px;
+}
+
+.read {
+  font-size: 28px;
+  font-weight: normal;
+  line-height: 42px;
+  letter-spacing: 0px;
+}
+
+.buy {
+  color: var(--primary-color);
+}
+
+.agreement {
+  margin-top: 80px;
+}
+
+.shadow {
+  flex: 1;
+  box-shadow: 4PX 4PX 8PX 0PX rgba(0, 0, 0, 0.16);
+  border-radius: 8PX;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .imgBox {
+    width: 115PX;
+    height: 115PX;
+    background: #ffffff;
+    box-shadow: 2PX 2PX 4PX 0PX rgba(24, 24, 24, 0.05);
+    border-radius: 12PX;
+    border: 1PX solid #f0f0f0;
+    margin: 0 auto;
+    margin-top: 70PX;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .img {
+      width: 87PX;
+      height: 87PX;
+    }
+  }
+
+  .title {
+    font-size: 15PX;
+    font-weight: bold;
+    color: #181818;
+    margin-top: 20PX;
+  }
+
+  .input {
+    width: 330PX;
+  }
+
+  .btnBox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    margin-top: 31PX;
+    width: 300PX;
+  }
+
+  .rights {
+    font-size: 13PX;
+    font-weight: 400;
+    color: #7f7f7f;
+    position: fixed;
+    bottom: 38PX;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

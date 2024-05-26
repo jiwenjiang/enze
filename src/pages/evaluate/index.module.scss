@@ -1,0 +1,323 @@
+.box {
+    height: 100vh;
+    background-color: #f9fbfc;
+    --primary-color: #99E49A;
+    --rv-primary-color: var(--primary-color);
+    --notify-warning-background-color: var(--primary-color);
+    position: relative;
+
+    :global(.taroify-popup--top) {
+        top: 82PX;
+    }
+}
+
+.stepIndex {
+    background: linear-gradient(to bottom, #E7F8E7, #ffffff);
+}
+
+.stepBox {
+    padding: 30px 100px;
+}
+
+.subject {
+    margin: 10PX 15PX;
+    text-align: center;
+    font-weight: bold;
+}
+
+.buchongBox {
+    padding: 15PX;
+
+    :global(.taroify-textarea) {
+        background-color: #FAFAFA;
+        border-radius: 28rpx 28rpx 28rpx 28rpx;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}
+
+.tabBox {
+    margin: 10PX 15PX 10PX 15PX;
+    background: #ffffff;
+    box-shadow: 4PX 4PX 8PX 0PX rgba(0, 0, 0, 0.16);
+    border-radius: 8PX;
+    overflow: hidden;
+
+    .swiperBox {
+        height: 143PX;
+        width: 100%;
+        border-radius: 8PX 8PX 0PX 0PX;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+    }
+
+    .title2 {
+        font-size: 15PX;
+        font-weight: bold;
+        color: #181818;
+        border-bottom: 1PX solid #efefef;
+        height: 46PX;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 13PX;
+        font-weight: bold;
+        color: #181818;
+        margin-bottom: 10PX;
+        padding-top: 10PX;
+    }
+
+    .tibox {
+        padding: 15PX;
+        border-top: 1PX solid #efefef;
+    }
+
+    .zhinan {
+        min-height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        flex-direction: column;
+        padding: 0 30px;
+
+        .zhinanText {
+            font-size: 28rpx;
+            color: #333333;
+            line-height: 32rpx;
+        }
+
+        .chakanzhinan {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+    }
+}
+
+.btn {
+    margin-top: 8PX;
+    color: #fff;
+    width: 528rpx;
+    height: 80rpx;
+    background: linear-gradient(90deg, #50B18A 0%, #59C398 100%);
+    border-radius: 40rpx 40rpx 40rpx 40rpx;
+    border: 2rpx solid rgba(221, 221, 221, 0.6);
+    margin-top: 26rpx;
+
+    :global(.taroify-loading) {
+        color: #1989fa;
+        margin-top: 10px;
+    }
+
+}
+
+.btnGray {
+    margin-top: 8PX;
+    color: #999999;
+    width: 528rpx;
+    height: 80rpx;
+    background: #EDEDED;
+    border-radius: 40rpx 40rpx 40rpx 40rpx;
+    border: 2rpx solid rgba(221, 221, 221, 0.6);
+    margin-top: 26rpx;
+
+    :global(.taroify-loading) {
+        color: #1989fa;
+        margin-top: 10px;
+    }
+}
+
+.btnbox {
+    padding: 0 15PX;
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+.iconBox {
+    width: 146px;
+    height: 146px;
+    background-color: #f7f8fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5PX;
+    position: relative;
+    border-radius: 24px;
+
+    .clear {
+        position: absolute;
+        right: -6px;
+        top: -10px;
+        z-index: 20;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.iconImg {
+    width: 60px;
+}
+
+.mediaBox {
+    display: flex;
+}
+
+.imgs {
+    width: 54PX;
+    height: 54PX;
+    margin-right: 5PX;
+    border-radius: 24px;
+}
+
+.videoBox {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.luxiang {
+    width: 25PX;
+    height: 25PX;
+}
+
+.cardBox {
+    background-color: transparent;
+    padding: 8PX;
+}
+
+.card {
+    background-color: #fff;
+    background: #ffffff;
+    box-shadow: 2PX 2PX 4PX 0PX rgba(24, 24, 24, 0.05);
+    border: 1PX solid #f0f0f0;
+    padding: 5PX 15PX;
+    font-size: 13PX;
+    border-radius: 8PX;
+
+    .title {
+        font-size: 15PX;
+        font-weight: bold;
+        color: #181818;
+        height: 46PX;
+        display: flex;
+        align-items: center;
+        border-bottom: 1PX solid #efefef;
+        margin-bottom: 15PX;
+
+        img {
+            width: 20PX;
+            height: 20PX;
+        }
+    }
+
+    .intro {
+        margin-bottom: 8px;
+        font-size: 32px;
+        font-weight: normal;
+        line-height: 48px;
+    }
+}
+
+.answers {
+    padding: 30px;
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: #181818;
+}
+
+.tagBox {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 30px 0;
+
+    .tag {
+        flex: 0 0 calc(33.333% - 12px);
+        height: 102px;
+        font-size: 28px;
+        font-weight: normal;
+        line-height: 102px;
+        text-align: center;
+        letter-spacing: 0px;
+        color: #999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 24px;
+        background: #FAFAFA;
+        box-sizing: border-box;
+    }
+
+    .activeTag {
+        background: #DEF6EB;
+        color: #fff;
+        border: 1px solid #50B18A;
+        color: #50B18A;
+    }
+}
+
+.update {
+    position: absolute;
+    left: -100px;
+    z-index: -1;
+    opacity: 0;
+}
+
+.desc {
+    font-weight: 400;
+    font-size: 28rpx;
+    color: #333333;
+    line-height: 48rpx;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+    padding: 28px 22px;
+}
+
+.intro-box {
+    height: 450px;
+    overflow: hidden;
+}
+
+.intro-text {
+    text-align: justify;
+    text-align-last: left;
+}
+
+
+.intro-text::after {
+    width: 100%;
+    display: inline-block;
+}
+
+.expand-box {
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 28rpx;
+    color: #666666;
+    background: #F7F7F7;
+}
+
+.is-expand {
+    transform: rotate(180deg);
+}
+
+.constent-visible {
+    height: auto !important;
+}
+
+.zhankai {
+    width: 24px;
+    height: 24px;
+}

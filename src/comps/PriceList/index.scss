@@ -1,0 +1,145 @@
+.price-list {
+  text-align: center;
+
+  .desc {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 48px;
+    letter-spacing: 0px;
+    color: #000000;
+    padding: 22px 30px;
+
+  }
+
+  .sub-desc {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 42px;
+    letter-spacing: 0px;
+    color: #888888;
+    margin-top: 16px;
+  }
+
+  .price-box {
+    display: flex;
+    gap: 20px;
+  }
+
+  .price-item {
+    width: 290rpx;
+    height: 128rpx;
+    border: 1px solid #999999;
+    border-radius: 24rpx;
+    padding: 16rpx 32rpx;
+    font-size: 28px;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 28rpx;
+    color: #24815C;
+  }
+
+  .price-item-number {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .price-item-listPrice {
+    color: #F44336;
+    text-decoration: line-through;
+  }
+
+
+  .price-item-salePrice {
+    font-weight: 500;
+    font-size: 32rpx;
+    color: #24815C;
+  }
+
+  .price {
+    color: #F44336;
+  }
+
+  .price-item-active {
+    border-color: var(--primary-color);
+    background-color: #DEF6EB;
+  }
+
+  .read {
+    color: #3D3D3D;
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 42px;
+    letter-spacing: 0px;
+  }
+
+  .buy {
+    color: var(--primary-color);
+  }
+
+  .agreement {
+    margin-top: 50rpx;
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  .head {
+    font-size: 34px;
+    font-weight: bold;
+    color: #181818;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .body {
+    padding: 30px;
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .content {
+      font-size: 28px;
+      font-weight: normal;
+      line-height: 42px;
+      margin-top: 10px;
+    }
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    transform: translateY(6px);
+  }
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.WordSection1 {
+  padding: 15px;
+}
+
+.MsoNormal {
+  margin-bottom: 15px;
+  text-indent: 2em;
+
+  .subTitle {
+    font-weight: bold;
+  }
+}
+
+.buy-btn {
+  width: 528rpx;
+  height: 80rpx;
+  background: linear-gradient(90deg, #50B18A 0%, #59C398 100%);
+  border-radius: 40rpx 40rpx 40rpx 40rpx;
+  border: 2rpx solid rgba(221, 221, 221, 0.6);
+  margin-top: 26rpx;
+}

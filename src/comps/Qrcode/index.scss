@@ -1,0 +1,14 @@
+.qr-box {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  .title {
+    font-weight: bold;
+  }
+}

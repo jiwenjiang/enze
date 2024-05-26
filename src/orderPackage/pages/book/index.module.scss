@@ -1,0 +1,472 @@
+.index {
+  background: #f9fbfc;
+  height: 100vh;
+  --primary-color: #f2b04f;
+  --text-color: #112950;
+  position: relative;
+  box-sizing: border-box;
+
+  :global(.taroify-popup--top) {
+    top: 82px;
+  }
+
+  :global(.taroify-popup--center) {
+    background: none;
+  }
+}
+
+.goto {
+  width: 327px;
+  height: 80px;
+  position: fixed;
+  bottom: 100px;
+  background-color: var(--primary-color);
+  color: #fff;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottomPart {
+  padding: 0 40px;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: calc(100vh - 160px);
+  overflow-y: auto;
+  padding-bottom: 30px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: 0px;
+  color: #112950;
+  text-align: left;
+  margin-bottom: 24px;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+
+  .subTitle {
+    font-size: 24px;
+    color: var(--primary-color);
+  }
+}
+
+.desc {
+  color: #b6b7b8;
+  font-size: 28px;
+  line-height: 40px;
+  margin-bottom: 24px;
+}
+
+.active {
+  border: 1px solid var(--primary-color);
+}
+
+.personCard {
+  width: 100%;
+  height: 116px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  align-self: stretch;
+  background: #ffffff;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+
+  .nameBox {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: #112950;
+
+    .date {
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 28px;
+      letter-spacing: 0px;
+      color: #b6b7b8;
+      margin-top: 8px;
+    }
+  }
+
+  .gender {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.choose {
+  width: 32px;
+  height: 32px;
+}
+
+.payBox {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.payCard {
+  width: 100%;
+  height: 80px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28px;
+  color: var(--text-color);
+  padding: 0 24px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+
+  .choose {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.projectBox {
+  padding: 24px 16px;
+  background: #ffffff;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
+
+  .pTitleBox {
+    text-align: center;
+
+    .pTitle {
+      font-size: 28px;
+      font-weight: normal;
+      line-height: 32px;
+      letter-spacing: 0px;
+      color: #112950;
+      position: relative;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .pTitle::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      opacity: 1;
+      background: #635df7;
+      left: -30px;
+      top: 12px;
+    }
+
+    .pTitle::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      opacity: 1;
+      background: #635df7;
+      right: -30px;
+      top: 12px;
+    }
+  }
+
+  .contentBox {
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 24px;
+    margin-top: 24px;
+
+    .duigou {
+      width: 32px;
+      height: 32px;
+    }
+
+    .cTitle {
+      font-size: 28px;
+      font-weight: normal;
+      line-height: 32px;
+      color: var(--text-color);
+    }
+
+    .active {
+      color: var(--primary-color);
+      border: none;
+    }
+  }
+}
+
+.riliBox {
+  border-radius: 16px;
+  background-color: #ffffff;
+
+  .riliHeads {
+    display: flex;
+
+    .head {
+      height: 52px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      font-size: 24px;
+      color: var(--text-color);
+    }
+  }
+
+  .riliBodys {
+    display: grid;
+    grid-template-rows: repeat(2, 76px);
+    grid-template-columns: repeat(7, 1fr);
+
+    .body {
+      height: 76px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      flex: 1;
+      font-size: 24px;
+      color: #b6b7b8;
+      border-top: 1px solid #ebebeb;
+    }
+
+    .activeDay {
+      background: rgba(242, 176, 79, 0.12);
+      color: var(--primary-color);
+    }
+
+    .inweek {
+      color: var(--text-color);
+    }
+
+    .count {
+      font-size: 16px;
+      color: #b6b7b8;
+    }
+
+    .hasCount {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.timeBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 16px;
+  row-gap: 16px;
+
+  .time {
+    height: 60px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    display: flex;
+    padding: 0 48px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    color: var(--text-color);
+  }
+
+  .time1 {
+    color: #b6b7b8;
+  }
+
+  .activeTime {
+    background: rgba(242, 176, 79, 0.12);
+    color: var(--primary-color);
+  }
+}
+
+.orderBox {
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
+  padding: 0 24px;
+
+  .li {
+    height: 76px;
+    line-height: 76px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 24px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .k {
+    color: #b6b7b8;
+  }
+
+  .p {
+    color: #f44336;
+  }
+
+  .noBorder {
+    border: none;
+  }
+}
+
+.picBox {
+  display: flex;
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+.yuanneiDesc {
+  font-size: 28rpx;
+  color: #3D3D3D;
+  line-height: 40rpx;
+  text-align: left;
+}
+
+.yuanneiImgs {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.pic {
+  width: 180rpx;
+  height: 180rpx;
+  margin-top: 18px;
+  margin-right: 10px;
+}
+
+.clear {
+  position: absolute;
+  right: 0rpx;
+  top: -4rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.danjuBox {
+  height: 144px;
+  border-radius: 16px;
+  background-color: #efefef;
+  margin-top: 16px;
+  display: flex;
+  font-size: 28px;
+  color: var(--text-color);
+  align-items: center;
+
+  .addIcon {
+    width: 130px;
+    height: 130px;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.mt16 {
+  margin-top: 16px;
+}
+
+.btnBox {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.succBox {
+  border-radius: 16px;
+  margin-top: 16px;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  background-color: #ffffff;
+
+  .tiphead {
+    background-color: #4570fa;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 28px;
+    color: #ffffff;
+
+    .tip {
+      width: 38px;
+      height: 30px;
+    }
+  }
+
+  .tipBody {
+    padding: 24px;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 28px;
+    color: var(--text-color);
+
+    .hasComplate {
+      font-size: 28px;
+      font-weight: normal;
+      line-height: 32px;
+      color: #06cc76;
+      margin-bottom: 24px;
+    }
+  }
+
+  .loc {
+    border-top: 1px solid #ebebeb;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+    padding-top: 16px;
+    align-items: center;
+  }
+}
+
+.preBtn {
+  width: 100%;
+  height: 64px;
+  background-color: #fff;
+  color: var(--primary-color);
+  line-height: 64px;
+  text-align: center;
+  margin-top: 32px;
+  border-radius: 32px;
+}
+
+.nextBtn {
+  width: 100%;
+  height: 64px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  line-height: 64px;
+  text-align: center;
+  margin-top: 32px;
+  border-radius: 32px;
+}
+
+.priceIitem {
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  padding: 16px 36px;
+  font-size: 28px;
+  color: var(--primary-color);
+}
+
+
+
+.img {
+  margin-top: 3em;
+}

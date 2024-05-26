@@ -1,0 +1,43 @@
+.linear-gradient {
+    width: 80%;
+    position: absolute;
+    height: 24rpx;
+    background: linear-gradient(270deg, #99E49A 0%, rgba(153, 228, 154, 0) 100%);
+    right: 0;
+    bottom: 4px;
+    opacity: 0.5;
+}
+
+.primary-btn {
+    background-color: #50B18A;
+    width: 85%;
+    margin: 20px auto;
+    box-sizing: border-box;
+    border-radius: 40px;
+    color: #fff;
+    height: 80px;
+    line-height: 80px;
+    font-size: 32rpx;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.mini-btn {
+    padding: 12px 34px;
+    text-align: center;
+    font-size: 24rpx;
+    color: #C5C8CB;
+    line-height: 34rpx;
+    background: #F5F7FB;
+    border-radius: 20px;
+}
+
+.active-btn {
+    color: #24815C;
+    border: 1px solid #49B9AD;
+    background-color: #DEF6EB;
+}
+
+.common-bg {
+    background: linear-gradient(180deg, #E7F8E7 0%, rgba(222, 246, 235, 0) 100%);
+}

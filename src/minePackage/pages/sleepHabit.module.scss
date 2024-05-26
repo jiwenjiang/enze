@@ -1,0 +1,75 @@
+.habitBox {
+    background-color: #F5F7FB;
+    --primary-color: #24815C;
+    padding: 10px 0;
+
+    :global(.taroify-slider) {
+        height: 12px;
+
+
+    }
+
+    :global(.taroify-slider__track) {
+        background-color: var(--primary-color);
+    }
+
+    .title {
+        position: relative;
+        margin: 22px 0;
+        width: fit-content;
+        font-weight: 600;
+        font-size: 40rpx;
+        color: #000000;
+
+        &::after {
+            content: '';
+            width: 80%;
+            position: absolute;
+            height: 24rpx;
+            background: linear-gradient(270deg, #99E49A 0%, rgba(153, 228, 154, 0) 100%);
+            right: 0;
+            bottom: 4px;
+            opacity: 0.6;
+        }
+    }
+
+    .checkItemBox {
+        display: flex;
+        flex-wrap: wrap;
+
+        .checkItem {
+            font-size: 24rpx;
+            padding: 20px 54px;
+            border-radius: 28px;
+            margin-right: 24px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            background: #F5F7FB;
+            color: #C5C8CB;
+        }
+
+        .activeItem {
+            background-color: #DEF6EB;
+            color: #24815C;
+            border: 1px solid #99CAB6;
+        }
+    }
+
+    .radioRow {
+        margin-bottom: 16px;
+    }
+
+    .slider {
+        margin: 30px 0;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        .sliderContent {
+            white-space: nowrap;
+            width: fit-content;
+        }
+    }
+
+
+}

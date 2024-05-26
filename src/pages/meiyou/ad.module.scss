@@ -1,0 +1,75 @@
+.imgView {
+    .m1 {
+        width: 100%;
+        padding-bottom: 130px;
+    }
+
+    .m2 {
+        width: 100%;
+        margin-top: -10px;
+    }
+}
+
+.action {
+    display: flex;
+    height: 130px;
+    padding: 0 30px;
+    padding-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+
+    .kefu {
+        font-size: 24px;
+        display: flex;
+        flex-direction: column;
+        color: rgb(100, 101, 102);
+    }
+
+    .btn {
+        width: calc(100vw - 140px);
+        background-color: rgb(255, 80, 64);
+        height: 80px;
+        text-align: center;
+        color: #fff;
+        line-height: 80px;
+        border-radius: 38px;
+    }
+}
+
+.pop {
+    padding: 30px;
+    padding-bottom: 50px;
+
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .yuanjian {
+        margin-bottom: 20px;
+    }
+
+    .youhui {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #ff8940;
+    }
+
+    .payBtn {
+        background-color: #ff8940;
+        color: #fff;
+        width: 200px;
+        height: 70px;
+        border-radius: 40px;
+        line-height: 70px;
+        text-align: center;
+    }
+}

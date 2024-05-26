@@ -1,0 +1,22 @@
+.box {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* 半透明背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+    top: 0;
+    left: 0;
+
+    .process {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 60px 80px;
+        border-radius: 20px;
+        text-align: center;
+    }
+}

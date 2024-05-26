@@ -1,0 +1,408 @@
+.index {
+  background: #f9fbfc;
+  height: calc(100vh - 180px);
+  overflow-y: auto;
+  --primary-color: #F2B04F;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bottomPart {
+  padding: 0 40px;
+  overflow: hidden;
+  padding-bottom: 100px;
+  background: #f9fbfc;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .bannerSection {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.title {
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0px;
+  color: #112950;
+  text-align: left;
+  margin-bottom: 24px;
+  margin-top: 32px;
+}
+
+.circleTitle {
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0px;
+  color: #fff;
+  text-align: left;
+  margin-bottom: 24px;
+  margin-top: 32px;
+  background-color: #5b7bd6;
+  border-radius: 24px;
+  width: fit-content;
+  padding: 6px 10px;
+}
+
+.card {
+  margin: 0 auto;
+  width: calc(100vw - 48px);
+  height: 228px;
+  padding: 16px 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0rpx 8rpx 20rpx 0rpx rgba(0, 0, 0, 0.1);
+  box-shadow: 0rpx 8rpx 20rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 28rpx 28rpx 28rpx 28rpx;
+  overflow: hidden;
+  margin: 24rpx;
+  padding: 30px;
+
+  .cardTitle {
+    font-weight: 700;
+    font-size: 32rpx;
+    color: #333333;
+    margin-bottom: 12px;
+  }
+
+  .cardImg {
+    width: 314px;
+    height: 104px;
+  }
+
+
+  .leibocardImg {
+    width: 327px;
+    height: 212px;
+    margin-bottom: 16px;
+  }
+
+  .leibocardImg2 {
+    width: 327px;
+    height: 142px;
+    margin-bottom: 16px;
+  }
+
+  .allCard {
+    width: 100%;
+  }
+
+  .miniCard {
+    width: 327px;
+    height: 112px;
+    border-radius: 16px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+
+    .miniCardImg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .miniCardTitle {
+      font-size: 24px;
+      line-height: 28px;
+      color: #112950;
+    }
+  }
+}
+
+.cardTitle {
+  color: #112950;
+  font-size: 28px;
+  line-height: 48px;
+}
+
+.cardDesc {
+  color: #B6B7B8;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.manageBox {
+  height: 156px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  flex-grow: 1;
+  background: #FFFFFF;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
+
+  .manageBtn {
+    width: 128px;
+    height: 52px;
+    background-color: var(--primary-color);
+    border-radius: 24px;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 52px;
+  }
+}
+
+.ganyuBox {
+  height: 132px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: var(--primary-color);
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
+
+  .ganyuImg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ganyuTxt {
+    color: #fff;
+    font-size: 28px;
+
+    .ganyuTitle {
+      line-height: 48px;
+    }
+
+    .subTxt {
+      font-size: 24px;
+    }
+  }
+}
+
+.loadingBox {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.anqier {
+  padding-bottom: 90px;
+
+  .head {
+    background-color: #0399ae;
+    height: 140px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    .logo {
+      height: 236rpx;
+    }
+  }
+
+  .body {
+    padding: 10px 40px;
+
+    .nav {
+      height: 120px;
+      display: flex;
+      justify-content: space-between;
+
+      .navItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: #112950;
+        font-size: 28px;
+
+        .imgBox {
+          width: 90px;
+          min-height: 90px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+
+    .descCard {
+      padding: 20px;
+      border-radius: 20px;
+      color: #fff;
+      margin-top: 20px;
+      box-sizing: border-box;
+
+      .title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #fff;
+        margin-top: 6px;
+      }
+
+      .title::after {
+        content: '';
+        height: 6px;
+        background-color: #fff;
+        width: 130px;
+        display: block;
+        margin-top: 10px;
+      }
+
+      .content {
+        font-size: 24px;
+      }
+    }
+
+    .imgBoxBox {
+      background-color: #fefcf6;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 28px;
+
+      .img {
+        height: 300px;
+        width: 100%;
+      }
+
+      .text {
+        margin: 30px 0;
+      }
+
+      .h5 {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.quzhou {
+  .head {
+    height: 380px;
+    width: 100vw;
+    position: relative;
+
+    .bg {
+      height: 330px;
+      width: 100vw;
+    }
+
+    .logoBox {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      background: #FFFFFF;
+      padding: 5px;
+      position: absolute;
+      left: 40px;
+      bottom: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .logo {
+        width: 100px;
+        height: 100px;
+      }
+
+    }
+
+    .phone {
+      padding-left: 180px;
+      font-size: 24px;
+      color: #615A53;
+    }
+  }
+
+  .body {
+    padding: 40px;
+
+    .card {
+      width: 100%;
+      background: #FFFFFF;
+      box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
+      display: flex;
+      padding: 24px;
+      align-items: center;
+      box-sizing: border-box;
+      height: 248px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+
+      .quzhouTitle {
+        font-size: 32px;
+        line-height: 48px;
+        color: #112950;
+        margin-bottom: 6px;
+      }
+
+      .desc {
+        font-size: 24px;
+        line-height: 36px;
+        color: #615A53;
+      }
+
+      .phoneText {
+        color: var(--primary-color);
+        text-decoration: underline;
+      }
+
+      .img {
+        min-width: 120px;
+        max-width: 120px;
+        min-height: 120px;
+        max-height: 120px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.section {
+  padding-top: 414px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    width: 100%;
+  }
+
+  .footer {
+    width: 280rpx;
+  }
+
+
+}
+
+.bannerImgBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
