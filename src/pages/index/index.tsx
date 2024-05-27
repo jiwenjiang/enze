@@ -4,11 +4,6 @@ import { ChildContext } from "@/service/context";
 import { triggerSubscrip, useAuth } from "@/service/hook";
 import request from "@/service/request";
 import { Base64, navWithLogin } from "@/service/utils";
-import duoyuan from "@/static/imgs/zhuyeduoyuan.png";
-import fengxian from "@/static/imgs/zhuyefengxian.png";
-import baogao from "@/static/imgs/zhuyepinggu.png";
-import shuimian1 from "@/static/imgs/zhuyeshuimian.png";
-import shuimian2 from "@/static/imgs/zhuyeshuimian2.png";
 import { Notify } from "@taroify/core";
 import { Image, Video, View } from "@tarojs/components";
 import Taro, { navigateTo, setStorageSync, useDidShow } from "@tarojs/taro";
@@ -85,7 +80,7 @@ export default function App() {
       // setUnLogin(wx._unLogin);
     });
     request({
-      url: "/wx/portal/v2/youbaoshanyu",
+      url: "/wx/portal/teyangxinxi",
       method: "GET",
     }).then((res) => {
       console.log("🚀 ~ useDidShow ~ res:", res);
@@ -169,58 +164,28 @@ export default function App() {
               poster={staticData.cover}
               style={{
                 width: "100%",
-                height: 121,
+                height: 160,
                 margin: "0 18px",
                 borderRadius: 14,
               }}
               objectFit="contain"
             ></Video>
           </View>
-          <View className={styles.card} style={{ marginTop: 0 }}>
-            <View className={styles.cardTitle}>发育风险评估</View>
-            <View className={styles.bannerImgBox}>
-              <Image
-                className={styles.cardImg}
-                src={fengxian}
-                mode="widthFix"
-                onClick={() => check(ScaleTableCode.LEIBO_GMS)}
-              ></Image>
-              <Image
-                className={styles.cardImg}
-                src={baogao}
-                mode="widthFix"
-                onClick={() => goto("/evaluatePackage/pages/recordList")}
-              ></Image>
-            </View>
+          <View className={styles.bannerImgBox}>
+            <Image
+              className={styles.cardImg}
+              src={staticData.aiEvaluation}
+              style={{ height: 160, width: 375 }}
+              onClick={() => check(ScaleTableCode.LEIBO_GMS)}
+            ></Image>
           </View>
-          <View className={styles.card} style={{ marginTop: 0 }}>
-            <View className={styles.cardTitle}>睡眠管理</View>
-            <View className={styles.bannerImgBox}>
-              <Image
-                className={styles.cardImg}
-                src={shuimian2}
-                mode="widthFix"
-                onClick={() => goto("/minePackage/pages/sleep")}
-              ></Image>
-              <Image
-                className={styles.cardImg}
-                src={shuimian1}
-                mode="widthFix"
-                onClick={() => goto("/minePackage/pages/sleepv2")}
-              ></Image>
-            </View>
-          </View>
-
-          <View className={styles.card} style={{ marginTop: 0 }}>
-            <View className={styles.cardTitle}>其它工具</View>
-            <View>
-              <Image
-                className={styles.cardImg}
-                src={duoyuan}
-                mode="widthFix"
-                onClick={() => goto("/evaluatePackage/pages/duoyuan")}
-              ></Image>
-            </View>
+          <View className={styles.bannerImgBox}>
+            <Image
+              className={styles.cardImg}
+              src={staticData.record}
+              style={{ height: 160, width: 375 }}
+              onClick={() => goto("/evaluatePackage/pages/recordList")}
+            ></Image>
           </View>
         </View>
         <View className={styles.footer}></View>

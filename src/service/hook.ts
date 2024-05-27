@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import request from "./request";
 
 export function triggerSubscrip(cb?) {
-  const enzeTempId = "vwqiIBDDHkYN_yAsCRTRCkAGZzDwbTe23emJ__E62ZY";
+  const enzeTempId = "FnFpEHdWq0_wKZ70PMAy_Fbuu2YbYPNFKUZ9vf7FLAI";
   // const enzeTempId = "WazgebdTA_-hWtIvKM1b3c___7qjF6qRs-YkhJqfhGI";
   // wx.getSetting({
   //   withSubscriptions: true,

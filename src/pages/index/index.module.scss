@@ -80,8 +80,8 @@
   }
 
   .cardImg {
-    width: 314px;
-    height: 104px;
+    margin-bottom: 16px;
+    width: 375px;
   }
 
 
@@ -403,6 +403,6 @@
 
 .bannerImgBox {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  padding: 0 10px;
+  justify-content: center;
 }

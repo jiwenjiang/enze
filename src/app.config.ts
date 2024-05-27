@@ -93,32 +93,16 @@ export default {
     color: "#000000",
     selectedColor: "#DC143C",
     backgroundColor: "#ffffff",
-    list:
-      projectConfig.appid === AppConfig.fushu.appId
-        ? [
-            {
-              pagePath: "pages/index/index",
-              text: "首页",
-            },
-            {
-              pagePath: "pages/kefu/index",
-              text: "客服",
-            },
-            {
-              pagePath: "pages/mine/index",
-              text: "个人中心",
-            },
-          ]
-        : [
-            {
-              pagePath: "pages/index/index",
-              text: "首页",
-            },
-            {
-              pagePath: "pages/mine/index",
-              text: "个人中心",
-            },
-          ],
+    list: [
+      {
+        pagePath: "pages/index/index",
+        text: "首页",
+      },
+      {
+        pagePath: "pages/mine/index",
+        text: "个人中心",
+      },
+    ],
   },
   permission: {
     "scope.userLocation": {

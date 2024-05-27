@@ -1,13 +1,9 @@
 import TabBar from "@/comps/TabBar";
 import request from "@/service/request";
 import { navWithLogin } from "@/service/utils";
-import duoyuan from "@/static/imgs/duoyuan.png";
 import ertongguanli from "@/static/imgs/ertongguanli.png";
-import fayuziping from "@/static/imgs/fayuziping.png";
 import Head from "@/static/imgs/head.png";
 import pinggudingdan from "@/static/imgs/pinggudingdan.png";
-import shuimianrizhi from "@/static/imgs/shuimianrizhi.png";
-import yimiaotongzhi from "@/static/imgs/yimiaotongzhi.png";
 import { Image, Text, View } from "@tarojs/components";
 import { getStorageSync, useDidShow } from "@tarojs/taro";
 import React, { useEffect, useState } from "react";
@@ -73,7 +69,7 @@ export default function App() {
           </Text> */}
         </View>
         <View className="function-region">
-          {showGrowth && (
+          {/* {showGrowth && (
             <View
               className="item"
               onClick={() => goto("/minePackage/pages/grow")}
@@ -81,8 +77,8 @@ export default function App() {
               <Image className="trade" src={fayuziping} />
               <Text className="sub-title">发育自评</Text>
             </View>
-          )}
-          <View
+          )} */}
+          {/* <View
             className="item"
             onClick={() => goto("/minePackage/pages/vaccination")}
           >
@@ -102,7 +98,7 @@ export default function App() {
           >
             <Image className="trade" src={duoyuan} />
             <Text className="sub-title">多元智能</Text>
-          </View>
+          </View> */}
           <View
             className="item"
             onClick={() => goto("/orderPackage/pages/order/scale")}

@@ -426,17 +426,12 @@ export default function App() {
         <View className="row flex-row">
           <FieldInput
             label="门诊卡号"
-            placeholder="非必填，可导入"
+            placeholder="非必填"
             value={cardNumber as any}
             labelStyles={{ width: 124 }}
             onInput={(e: any) => onCardNumber(e.target.value)}
           />
-          <View
-            onClick={() => setOpenImport(true)}
-            className={styles.importBtn}
-          >
-            导入
-          </View>
+        
         </View>
         <View className="row">
           <FieldInput

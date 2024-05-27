@@ -1,7 +1,7 @@
 import Taro, { getCurrentPages, navigateTo } from "@tarojs/taro";
 
-const developHost = "https://enzeapp.fushuhealth.com";
-// const developHost = "https://wx-test.fushuhealth.com";
+// const developHost = "https://enzeapp.fushuhealth.com";
+const developHost = "https://wx-test.fushuhealth.com";
 const gaHost = "https://ybsyapp.enzemed.com:8501";
 
 const reqUrl = {

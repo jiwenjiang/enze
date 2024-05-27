@@ -292,9 +292,7 @@ function Card() {
               </View>
 
               <Info data={report} />
-              <View className={styles.cardBox}>
-                <Qrcode url={report.weWorkQrCode} />
-              </View>
+              
               <View className={styles.cardBox}>
                 <View className={styles.preBtn} onClick={() => back()}>
                   返回首页

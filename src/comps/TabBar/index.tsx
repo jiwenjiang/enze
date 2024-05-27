@@ -1,7 +1,6 @@
 import { triggerSubscrip } from "@/service/hook";
 // import Kefu from "@/static/icons/kefu.svg";
 // import Kefu2 from "@/static/icons/kefu2.svg";
-import Kefu from "@/static/imgs/kefu.png";
 import Shouye from "@/static/imgs/shouye.png";
 import Shouye2 from "@/static/imgs/shouye2.png";
 import Wode from "@/static/imgs/wode.png";
@@ -71,10 +70,10 @@ export default function TabBar({ current }) {
           </View>
         )}
       </View>
-      <View className="tab-item" onClick={() => open()}>
+      {/* <View className="tab-item" onClick={() => open()}>
         <Image src={Kefu} className="tab-item-img"></Image>
         <View>客服</View>
-      </View>
+      </View> */}
 
       <View className="tab-item">
         {current === "mine" ? (
@@ -89,33 +88,6 @@ export default function TabBar({ current }) {
           </View>
         )}
       </View>
-
-      {/* <Tabbar
-        value={pageList.findIndex((v) => v.page === current)}
-        fixed={true}
-      >
-        <Tabbar.TabItem icon={<HomeOutlined />} onClick={() => handleClick(0)}>
-          首页
-        </Tabbar.TabItem>
-        <Tabbar.TabItem
-          icon={
-            <Image
-              src={current === "kefu" ? Kefu2 : Kefu}
-              style={{ width: 16, height: 16 }}
-            />
-          }
-          // onClick={() => handleClick(1)}
-          onClick={() => open()}
-        >
-          客服
-        </Tabbar.TabItem>
-        <Tabbar.TabItem
-          icon={<UserCircleOutlined />}
-          onClick={() => handleClick(2)}
-        >
-          我的
-        </Tabbar.TabItem>
-      </Tabbar> */}
     </View>
   );
 }
