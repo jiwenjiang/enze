@@ -25,6 +25,7 @@ export default function App() {
     record: "",
     footer: "",
     cover: "",
+    learningDisability: "",
   });
 
   // useChannel(channelJudge);
@@ -177,6 +178,14 @@ export default function App() {
               src={staticData.aiEvaluation}
               style={{ height: 160, width: 375 }}
               onClick={() => check(ScaleTableCode.LEIBO_GMS)}
+            ></Image>
+          </View>
+          <View className={styles.bannerImgBox}>
+            <Image
+              className={styles.cardImg}
+              src={staticData.learningDisability}
+              style={{ height: 160, width: 375 }}
+              onClick={() => goto("/evaluatePackage/pages/obstacle")}
             ></Image>
           </View>
           <View className={styles.bannerImgBox}>

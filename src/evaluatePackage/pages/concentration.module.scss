@@ -1,0 +1,95 @@
+.index {
+    background-color: #F5F7FB;
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 30px 40px;
+    padding-bottom: 100px;
+
+    .introTitle {
+        font-weight: 600;
+        font-size: 46rpx;
+        color: rgba(0, 0, 0, 0.8);
+    }
+
+    .introDesc {
+        font-weight: 400;
+        font-size: 24rpx;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .ansItem {
+        .title {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+
+            .time {
+                font-weight: 600;
+                font-size: 32rpx;
+                color: #E30000;
+            }
+        }
+    }
+
+    .ansBox {
+        margin-top: 30px;
+    }
+
+
+
+    .row {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 100px;
+
+        .num {
+            width: 80px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            border: 1px solid #11BD8C;
+            font-weight: 600;
+            font-size: 32rpx;
+            color: #00754A;
+            position: relative;
+        }
+
+        .activeItem {
+            background-color: #11BD8C;
+            color: #fff;
+        }
+
+        .line {
+            width: 84px;
+            height: 1px;
+            border-top: 6px solid #11BD8C;
+            position: absolute;
+            left: 50%;
+            bottom: -30px;
+        }
+
+        .down {
+            bottom: -60px;
+        }
+    }
+
+    .save {
+        background-color: #ffffff;
+        height: 128px;
+        width: 100vw;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .btnBox {
+        display: flex;
+        gap: 30px;
+    }
+}

@@ -175,6 +175,15 @@
     }
 }
 
+.abilityIntro {
+    border: 1px solid rgb(46, 176, 46);
+    color: rgb(46, 176, 46);
+    padding: 3px 6px;
+    border-radius: 6px;
+    font-size: 28px;
+    text-align: left;
+}
+
 .rangeBox {
     display: flex;
     justify-content: center;
@@ -1046,4 +1055,74 @@
     .v {
         color: #000000;
     }
+}
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 120px;
+
+    .head {
+        display: flex;
+        height: 40PX;
+        line-height: 40PX;
+        border: 1PX solid #a7a2a2;
+        border-right: none;
+        color: #7f7f7f;
+        font-weight: bold;
+        padding: 0;
+
+        .col1 {
+            width: 130PX;
+            padding-left: 10PX;
+            border-right: 1PX solid #c6bdbd;
+        }
+
+        .col2 {
+            flex: 1;
+            text-align: center;
+            border-right: 1PX solid #c6bdbd;
+        }
+    }
+
+    .body {
+        .li {
+            display: flex;
+            min-height: 40PX;
+            line-height: 15PX;
+            border: 1PX solid #c6bdbd;
+            border-right: none;
+            border-top: none;
+
+            .col1 {
+                width: 130PX;
+                padding-left: 10PX;
+                border-right: 1PX solid #c6bdbd;
+                display: flex;
+                align-items: center;
+            }
+
+            .col2 {
+                flex: 1;
+                text-align: center;
+                border-right: 1PX solid #c6bdbd;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+
+}
+
+.bottomBox {
+    background-color: #fff;
+    height: 128px;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
 }

@@ -94,8 +94,38 @@ export default function App() {
       });
       return;
     }
+    if ([ScaleTableCode.ZHUANZHULI].includes(item.scaleTableCode)) {
+      navigateTo({
+        url: `/evaluatePackage/pages/concentrationDetail?id=${item.id}&name=${item.scaleName}`,
+      });
+      return;
+    }
+    if ([ScaleTableCode.XUEXINENGLI].includes(item.scaleTableCode)) {
+      navigateTo({
+        url: `/evaluatePackage/pages/abilityDetail?id=${item.id}&name=${item.scaleName}`,
+      });
+      return;
+    }
     navigateTo({
       url: `/pages/evaluate/previewReport?id=${item.id}&name=${item.scaleName}`,
+    });
+  };
+
+  const goDetail = (item) => {
+    if ([ScaleTableCode.ZHUANZHULI].includes(item.scaleTableCode)) {
+      navigateTo({
+        url: `/evaluatePackage/pages/concentration?code=${ScaleTableCode.ZHUANZHULI}&id=${item.id} `,
+      });
+      return;
+    }
+    if ([ScaleTableCode.XUEXINENGLI].includes(item.scaleTableCode)) {
+      navigateTo({
+        url: `/evaluatePackage/pages/ability?code=${ScaleTableCode.XUEXINENGLI}&id=${item.id} `,
+      });
+      return;
+    }
+    navigateTo({
+      url: `/pages/evaluate/detail?id=${item.id}`,
     });
   };
 
@@ -153,14 +183,7 @@ export default function App() {
                 <View className={styles.line}></View>
                 <View className={styles.btnbox}>
                   {data?.reserveType !== 1 && (
-                    <View
-                      className={styles.btn}
-                      onClick={() =>
-                        navigateTo({
-                          url: `/pages/evaluate/detail?id=${data.id}`,
-                        })
-                      }
-                    >
+                    <View className={styles.btn} onClick={() => goDetail(data)}>
                       量表详情
                     </View>
                   )}

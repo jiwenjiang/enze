@@ -70,7 +70,6 @@ export default function PriceList({
               >
                 <View className="price-item-number">
                   <View>{v.availableTimes}次</View>
-                  <View className="price-item-listPrice">{v.listPrice}元</View>
                 </View>
                 <View className="price-item-salePrice">{v.salePrice}元</View>
               </View>

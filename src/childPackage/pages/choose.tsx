@@ -42,6 +42,18 @@ export default function App() {
       navigateTo({
         url: `/pages/evaluate/index?childId=${data[active]?.id}&age=${data[active]?.birthdayDate}&code=${router.params.code}&orderId=${router.params.orderId}`,
       });
+    } else if (
+      [ScaleTableCode.ZHUANZHULI].includes(Number(router.params.code))
+    ) {
+      navigateTo({
+        url: `/evaluatePackage/pages/concentration?childId=${data[active]?.id}&age=${data[active]?.birthdayDate}&code=${router.params.code}&orderId=${router.params.orderId}`,
+      });
+    } else if (
+      [ScaleTableCode.XUEXINENGLI].includes(Number(router.params.code))
+    ) {
+      navigateTo({
+        url: `/evaluatePackage/pages/ability?childId=${data[active]?.id}&age=${data[active]?.birthdayDate}&code=${router.params.code}&orderId=${router.params.orderId}`,
+      });
     } else {
       navigateTo({
         url: `/pages/evaluate/step?childId=${data[active]?.id}&age=${data[active]?.birthdayDate}&code=${router.params.code}&orderId=${router.params.orderId}`,

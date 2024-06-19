@@ -19,6 +19,8 @@ export enum ScaleTableCode {
   Product88 = 33,
   Duoyuan = 41,
   Shuimian3to12 = 42,
+  ZHUANZHULI,
+  XUEXINENGLI
 }
 
 export enum OrderStatus {

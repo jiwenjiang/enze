@@ -1,16 +1,3 @@
-const projectConfig = require("../project.config.json");
-const AppConfig = {
-  fushu: {
-    appId: "wxc662de75e52ad4d5",
-  },
-  child: {
-    appId: "wxb7471fee564e0831",
-  },
-  leibo: {
-    appId: "wx45988ee03543eb16",
-  },
-};
-
 export default {
   pages: [
     "pages/index/index",
@@ -41,6 +28,11 @@ export default {
         "pages/doc-eva-list",
         "pages/duoyuan",
         "pages/questions",
+        "pages/obstacle",
+        "pages/concentration",
+        "pages/concentrationDetail",
+        "pages/ability",
+        "pages/abilityDetail",
       ],
     },
     {
