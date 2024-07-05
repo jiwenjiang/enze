@@ -79,7 +79,7 @@ export default function App() {
       <View className={cls(styles.index, "common-bg")}>
         <Notify id="notify" />
         <ChooseChild change={chooseChild} />
-        {currentChildren.id && (
+        {currentChildren?.id && (
           <View>
             <View
               className={styles2.list}
