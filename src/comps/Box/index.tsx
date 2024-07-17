@@ -11,7 +11,7 @@ export default function Box({
   noM,
 }: {
   title?: React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   styles?: CSSProperties;
   titleStyles?: CSSProperties;
   noM?: boolean;

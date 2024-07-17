@@ -33,6 +33,8 @@ export default {
         "pages/concentrationDetail",
         "pages/ability",
         "pages/abilityDetail",
+        "pages/ddst",
+        "pages/ddst-photo-list",
       ],
     },
     {

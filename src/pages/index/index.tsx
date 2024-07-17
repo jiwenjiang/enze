@@ -1,17 +1,17 @@
 import TabBar from "@/comps/TabBar";
 import { ScaleTableCode } from "@/service/const";
 import { ChildContext } from "@/service/context";
-import { triggerSubscrip, useAuth } from "@/service/hook";
+import { triggerSubscrip, useAuth, useChannel } from "@/service/hook";
 import request from "@/service/request";
 import { Base64, navWithLogin } from "@/service/utils";
-import { Notify } from "@taroify/core";
 import { Image, Video, View } from "@tarojs/components";
 import Taro, { navigateTo, setStorageSync, useDidShow } from "@tarojs/taro";
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./index.module.scss";
 
 export default function App() {
-  const { getAuth } = useAuth();
+  const { getAuth, getPortal } = useAuth();
+
   const childContext = useContext(ChildContext);
 
   const [staticData, setStatic] = useState({
@@ -28,7 +28,27 @@ export default function App() {
     learningDisability: "",
   });
 
-  // useChannel(channelJudge);
+  const channelJudge = () => {
+    if (wx._orgId === "hzsdyrmyy") {
+      request({
+        url: "/wx/portal/hzsdyrmyy",
+        method: "GET",
+      }).then((res) => {
+        setStatic(res.data);
+        setStorageSync("staticData", res.data);
+      });
+    }
+    if (wx._orgId === "hzsfckyy") {
+      request({
+        url: "/wx/portal/hzsfckyy",
+        method: "GET",
+      }).then((res) => {
+        setStatic(res.data);
+        setStorageSync("staticData", res.data);
+      });
+    }
+  };
+  useChannel(channelJudge);
 
   const goto = (url) => {
     triggerSubscrip(() => {
@@ -37,57 +57,29 @@ export default function App() {
     // getAuth(() => getChild(url));
   };
 
-  const waitOpen = () => {
-    Notify.open({
-      color: "warning",
-      message: "敬请期待",
-    });
-  };
-
-  useEffect(() => {
-    // const timer = setInterval(() => {
-    //   const user = getStorageSync("user");
-    //   if (user) {
-    //     setModules(user?.modules);
-    //     clearInterval(timer);
-    //   }
-    // }, 1000);
-  }, []);
-
   useDidShow(() => {
-    // getPortal(res => {
-    //   if (wx._frontPage === "xaaqer") {
-    //     setChannel(Channel.anqier);
-    //     request({
-    //       url: "/wx/portal/angle",
-    //       method: "GET"
-    //     }).then(res => {
-    //       setAnqierStatic(res.data);
-    //     });
-    //   }
-    //   if (wx._frontPage === "qzxfybjy") {
-    //     setChannel(Channel.quzhou);
-    //     request({
-    //       url: "/wx/portal/quzhou",
-    //       method: "GET"
-    //     }).then(res => {
-    //       setQuzhouStatic(res.data);
-    //     });
-    //   }
-    //   setModules(res.modules);
-    // });
-    getAuth((res) => {
-      wx._unLogin = res.code === 2;
-      // setUnLogin(wx._unLogin);
+    // wx.
+    getPortal((res) => {
+      if (wx._frontPage === "hzsdyrmyy") {
+        request({
+          url: "/wx/portal/hzsdyrmyy",
+          method: "GET",
+        }).then((res) => {
+          setStatic(res.data);
+          setStorageSync("staticData", res.data);
+        });
+      }
+      if (wx._frontPage === "hzsfckyy") {
+        request({
+          url: "/wx/portal/hzsfckyy",
+          method: "GET",
+        }).then((res) => {
+          setStatic(res.data);
+          setStorageSync("staticData", res.data);
+        });
+      }
     });
-    request({
-      url: "/wx/portal/teyangxinxi",
-      method: "GET",
-    }).then((res) => {
-      console.log("🚀 ~ useDidShow ~ res:", res);
-      setStatic(res.data);
-      setStorageSync("staticData", res.data);
-    });
+    getAuth("login");
   });
 
   const check = async (scaleTableCode) => {
@@ -178,14 +170,6 @@ export default function App() {
               src={staticData.aiEvaluation}
               style={{ height: 160, width: 375 }}
               onClick={() => check(ScaleTableCode.LEIBO_GMS)}
-            ></Image>
-          </View>
-          <View className={styles.bannerImgBox}>
-            <Image
-              className={styles.cardImg}
-              src={staticData.learningDisability}
-              style={{ height: 160, width: 375 }}
-              onClick={() => goto("/evaluatePackage/pages/obstacle")}
             ></Image>
           </View>
           <View className={styles.bannerImgBox}>

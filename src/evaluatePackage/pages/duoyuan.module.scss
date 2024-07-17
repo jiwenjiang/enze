@@ -35,6 +35,7 @@
     margin-top: 16px;
     padding: 24px;
     padding-top: 34px;
+    position: relative;
 
     .item {
         display: flex;
@@ -96,6 +97,13 @@
             line-height: 68px;
             border: 1px solid #999999;
         }
+    }
+
+    .status {
+        position: absolute;
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
 

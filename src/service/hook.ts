@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import request from "./request";
 
 export function triggerSubscrip(cb?) {
-  const enzeTempId = "FnFpEHdWq0_wKZ70PMAy_Fbuu2YbYPNFKUZ9vf7FLAI";
+  const enzeTempId = "4Sh3mhpfFVYApiovRXvlomBY8p7zNDg4Sdhk1DaFtUc";
   // const enzeTempId = "WazgebdTA_-hWtIvKM1b3c___7qjF6qRs-YkhJqfhGI";
   // wx.getSetting({
   //   withSubscriptions: true,
@@ -177,7 +177,7 @@ export function useAuth() {
       });
       if (res.code === 0) {
         console.log("🚀 ~ file: hook.ts:145 ~ getPortal ~ res:", res);
-        wx._frontPage = res.data.frontPage;
+        wx._frontPage = "hzsfckyy" || res.data.frontPage;
         // Taro.reLaunch({
         //   url: `/pages/index/index?channel=${wx._frontPage}`
         // });
