@@ -88,17 +88,26 @@ export default function App() {
         url: "/order/pay",
         data: { id: res.data.orderId, ip: "127.0.0.1" },
       });
-      wx.requestPayment({
-        timeStamp: payRes.data.timeStamp,
-        nonceStr: payRes.data.nonceStr,
-        package: payRes.data.packageValue,
-        signType: payRes.data.signType,
-        paySign: payRes.data.paySign,
-        success(res) {
-          Notify.open({ color: "success", message: "支付成功" });
-          checkPay();
-        },
+      if (childContext.child.len) {
+        wx._payUrl = `/childPackage/pages/choose?code=${router.params.code}&orderId=${res.data.orderId}`;
+      } else {
+        const returnUrl = Base64.encode("/pages/evaluate/list?key=1");
+        wx._payUrl = `/childPackage/pages/manage?returnUrl=${returnUrl}`;
+      }
+      navigateTo({
+        url: `/pages/other/webView?url=${Base64.encode(payRes.data)}`,
       });
+      // wx.requestPayment({
+      //   timeStamp: payRes.data.timeStamp,
+      //   nonceStr: payRes.data.nonceStr,
+      //   package: payRes.data.packageValue,
+      //   signType: payRes.data.signType,
+      //   paySign: payRes.data.paySign,
+      //   success(res) {
+      //     Notify.open({ color: "success", message: "支付成功" });
+      //     checkPay();
+      //   },
+      // });
     } else {
       checkPay();
     }

@@ -88,7 +88,7 @@ export default function App() {
         attachments: [],
         mediaList: [],
         answerSn: 1,
-      })),
+      })),  
     }));
     setData(datas);
     setActive(0);

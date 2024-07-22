@@ -16,6 +16,7 @@ export default {
     "pages/evaluate/detail",
     "pages/other/webView",
     "pages/meiyou/ad",
+    "pages/payment/payment",
   ],
   subpackages: [
     {

@@ -35,7 +35,7 @@ export default function App() {
   });
 
   // 获取订单状态并为对应文字标签设置对应类名
-  const getOrderStatus = v => {
+  const getOrderStatus = (v) => {
     switch (v.status) {
       case OrderStatus.UNPAID:
         return "status unpaid";
@@ -51,7 +51,7 @@ export default function App() {
   };
 
   // 取消订单
-  const cancel = async id => {
+  const cancel = async (id) => {
     const res = await request({ url: `/order/cancel?id=${id}` });
 
     if (res.code === 0) {
@@ -64,22 +64,24 @@ export default function App() {
   };
 
   // 跳转至订单详情页面
-  const goOrderDetailPage = id => {
+  const goOrderDetailPage = (id) => {
     navigateTo({
-      url: `/orderPackage/pages/order/detail?id=${id}`
+      url: `/orderPackage/pages/order/detail?id=${id}`,
     });
   };
 
   // 跳转至GMs量表儿童选择页面
-  const goChildChoosePage = v => {
+  const goChildChoosePage = (v) => {
     if (childContext.child.len) {
       navigateTo({
-        url: `/childPackage/pages/choose?code=${v.scaleTableCode}&orderId=${v.id}`
+        url: `/childPackage/pages/choose?code=${v.scaleTableCode}&orderId=${v.id}`,
       });
     } else {
-      const returnUrl = Base64.encode(`/childPackage/pages/choose?code=${v.scaleTableCode}&orderId=${v.id}`);
+      const returnUrl = Base64.encode(
+        `/childPackage/pages/choose?code=${v.scaleTableCode}&orderId=${v.id}`
+      );
       navigateTo({
-        url: `/childPackage/pages/manage?returnUrl=${returnUrl}`
+        url: `/childPackage/pages/manage?returnUrl=${returnUrl}`,
       });
     }
   };
@@ -92,6 +94,17 @@ export default function App() {
   const getChildrenList = async () => {
     const res = await request({ url: "/children/list" });
     childContext.updateChild({ len: res.data.children.length });
+  };
+
+  const toPay = async (id) => {
+    const payRes = await request({
+      url: "/order/pay",
+      data: { id: id, ip: "127.0.0.1" },
+    });
+    wx._payUrl = "/orderPackage/pages/order/scale";
+    navigateTo({
+      url: `/pages/other/webView?url=${Base64.encode(payRes.data)}`,
+    });
   };
 
   return (
@@ -118,7 +131,11 @@ export default function App() {
                   <Button className="btn cancel" onClick={() => cancel(v.id)}>
                     取消
                   </Button>
-                  <Button className="btn" color="primary">
+                  <Button
+                    className="btn"
+                    color="primary"
+                    onClick={() => toPay(v.id)}
+                  >
                     去付款
                   </Button>
                 </View>

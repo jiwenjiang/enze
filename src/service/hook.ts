@@ -177,7 +177,7 @@ export function useAuth() {
       });
       if (res.code === 0) {
         console.log("🚀 ~ file: hook.ts:145 ~ getPortal ~ res:", res);
-        wx._frontPage = "hzsfckyy" || res.data.frontPage;
+        wx._frontPage = res.data.frontPage;
         // Taro.reLaunch({
         //   url: `/pages/index/index?channel=${wx._frontPage}`
         // });

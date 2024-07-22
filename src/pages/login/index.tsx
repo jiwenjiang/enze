@@ -55,7 +55,7 @@ export default function App() {
         url: "/wx/portal/logo",
         data: {
           channel: router.params.channel || "",
-          orgid: router.params.orgid || 0,
+          orgid: router.params.orgid || "",
         },
       });
       setLogo(res.data.url);
