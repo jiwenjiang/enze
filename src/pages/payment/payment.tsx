@@ -19,15 +19,18 @@ export default function App() {
       paySign: res.data.sign,
       success: function(res) {
         console.log("⽀付接⼝调⽤成功", res);
+        wx.redirectTo({
+          url: wx._paySuccUrl,
+        });
       },
       fail: function(res) {
         console.log("⽀付接⼝调⽤失败", res);
+        wx.redirectTo({
+          url: wx._payFailUrl,
+        });
       },
       complete: function(res1) {
         console.log(res1, res.data);
-        wx.redirectTo({
-          url: wx._payUrl,
-        });
       },
     });
   }, []);

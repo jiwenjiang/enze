@@ -1,9 +1,11 @@
 import { ScaleTableCode } from "@/service/const";
 import request from "@/service/request";
+import { Base64 } from "@/service/utils";
 import Female from "@/static/icons/female.svg";
 import Male from "@/static/icons/male.svg";
 import Nanhai from "@/static/imgs/nanhai.png";
 import Nvhai from "@/static/imgs/nvhai.png";
+import Tianjia from "@/static/imgs/tianjiaertong.png";
 import Weixuanzhong from "@/static/imgs/weixuanzhong.png";
 import Xuanzhong from "@/static/imgs/xuanzhong.png";
 import { Notify } from "@taroify/core";
@@ -55,14 +57,41 @@ export default function App() {
         url: `/evaluatePackage/pages/ability?childId=${data[active]?.id}&age=${data[active]?.birthdayDate}&code=${router.params.code}&orderId=${router.params.orderId}`,
       });
     } else {
+      if (router.params.ignoreEvaluate === "1") {
+      }
       navigateTo({
         url: `/pages/evaluate/step?childId=${data[active]?.id}&age=${data[active]?.birthdayDate}&code=${router.params.code}&orderId=${router.params.orderId}`,
       });
     }
   };
 
+  const submit = async () => {
+    let params: any = {
+      childrenId: data[active]?.id,
+      scaleTableCode: router.params.code ?? 9,
+      answers: [],
+      orderId: router.params.orderId,
+    };
+    await request({
+      url: "/scaleRecord/withoutAnswer/save",
+      data: params,
+      method: "POST",
+    });
+    navigateTo({ url: "/evaluatePackage/pages/inHospital" });
+  };
+
   const manage = () => {
     navigateTo({ url: "/childPackage/pages/manage" });
+  };
+  const add = () => {
+    const returnUrl = Base64.encode(
+      `/childPackage/pages/choose?code=${router.params.code}&orderId=${
+        router.params.orderId
+      }&ignoreEvaluate=${router.params.ignoreEvaluate ?? ""}`
+    );
+    navigateTo({
+      url: `/childPackage/pages/edit?code=${router.params.code}&returnUrl=${returnUrl}`,
+    });
   };
 
   const choose = (_v, i) => {
@@ -84,6 +113,8 @@ export default function App() {
           以便医生给出更准确的资料，信息仅医生可见
         </View>
       </View>
+      <Image src={Tianjia} className={styles.add} onClick={add} />
+
       <View className={styles["list-wrap"]}>
         <View className="list">
           {data.map((v, i) => (
@@ -121,9 +152,15 @@ export default function App() {
         </View>
         {data.length > 0 && (
           <View className={styles.bottom}>
-            <View onClick={start} className="primary-btn">
-              开始评测
-            </View>
+            {router.params.ignoreEvaluate === "1" ? (
+              <View onClick={submit} className="primary-btn">
+                提交数据
+              </View>
+            ) : (
+              <View onClick={start} className="primary-btn">
+                开始评测
+              </View>
+            )}
           </View>
         )}
       </View>

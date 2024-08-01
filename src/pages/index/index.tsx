@@ -26,6 +26,7 @@ export default function App() {
     footer: "",
     cover: "",
     learningDisability: "",
+    showInHospital: "",
   });
 
   const channelJudge = () => {
@@ -82,7 +83,7 @@ export default function App() {
     getAuth("login");
   });
 
-  const check = async (scaleTableCode) => {
+  const check = async (scaleTableCode, ignoreEvaluate?: number) => {
     if (wx._unLogin) {
       navigateTo({
         url: `/pages/login/index?returnUrl=${"/pages/index/index"}`,
@@ -91,20 +92,23 @@ export default function App() {
       triggerSubscrip(async () => {
         const res = await request({
           url: "/order/check",
-          data: { scaleTableCode },
+          data: {
+            scaleTableCode,
+            useWay: ignoreEvaluate ? 2 : 1,
+          },
         });
         if (!res.data.hasPaidOrder) {
           navigateTo({
-            url: `/orderPackage/pages/order/gmsPay?code=${scaleTableCode}&returnUrl=${"/pages/index/index"}`,
+            url: `/orderPackage/pages/order/gmsPay?code=${scaleTableCode}&returnUrl=${"/pages/index/index"}&ignoreEvaluate=${ignoreEvaluate}`,
           });
         } else {
           if (childContext.child.len) {
             navigateTo({
-              url: `/childPackage/pages/choose?code=${scaleTableCode}&orderId=${res.data.orderId}`,
+              url: `/childPackage/pages/choose?code=${scaleTableCode}&orderId=${res.data.orderId}&ignoreEvaluate=${ignoreEvaluate}`,
             });
           } else {
             const returnUrl = Base64.encode(
-              `/childPackage/pages/choose?code=${scaleTableCode}&orderId=${res.data.orderId}`
+              `/childPackage/pages/choose?code=${scaleTableCode}&orderId=${res.data.orderId}&ignoreEvaluate=${ignoreEvaluate}`
             );
 
             navigateTo({
@@ -172,6 +176,17 @@ export default function App() {
               onClick={() => check(ScaleTableCode.LEIBO_GMS)}
             ></Image>
           </View>
+          {staticData.showInHospital && (
+            <View className={styles.bannerImgBox}>
+              <Image
+                className={styles.cardImg}
+                src={staticData.showInHospital}
+                style={{ height: 160, width: 375 }}
+                onClick={() => check(ScaleTableCode.LEIBO_GMS, 1)}
+              ></Image>
+            </View>
+          )}
+
           <View className={styles.bannerImgBox}>
             <Image
               className={styles.cardImg}

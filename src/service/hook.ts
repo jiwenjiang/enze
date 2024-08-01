@@ -19,7 +19,7 @@ export function triggerSubscrip(cb?) {
   // if (!subscriptionStatus) {
   wx.requestSubscribeMessage({
     tmplIds: [enzeTempId],
-    success(res) {
+    success(res) {  
       console.log("🚀 ~ success ~ res:", res);
     },
     complete() {

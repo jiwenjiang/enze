@@ -101,7 +101,8 @@ export default function App() {
       url: "/order/pay",
       data: { id: id, ip: "127.0.0.1" },
     });
-    wx._payUrl = "/orderPackage/pages/order/scale";
+    wx._paySuccUrl = "/orderPackage/pages/order/scale";
+    wx._payFailUrl = `/orderPackage/pages/order/scale`;
     navigateTo({
       url: `/pages/other/webView?url=${Base64.encode(payRes.data)}`,
     });

@@ -46,7 +46,11 @@ export default function App() {
   const checkPay = async () => {
     const res = await request({
       url: "/order/check",
-      data: { scaleTableCode: router.params.code, type: EvaluateType.ZHINENG },
+      data: {
+        scaleTableCode: router.params.code,
+        type: EvaluateType.ZHINENG,
+        useWay: router.params.ignoreEvaluate ? 2 : 1,
+      },
     });
     if (!res.data.hasPaidOrder) {
       navigateTo({ url: `/orderPackage/pages/order/gmsPay` });
@@ -81,6 +85,7 @@ export default function App() {
         invoiceId: [0],
         type: EvaluateType.ZHINENG,
         workScheduleId: 0,
+        useWay: router.params.ignoreEvaluate ? 2 : 1,
       },
     });
     if (!res.data.hasPaidOrder) {
@@ -89,10 +94,23 @@ export default function App() {
         data: { id: res.data.orderId, ip: "127.0.0.1" },
       });
       if (childContext.child.len) {
-        wx._payUrl = `/childPackage/pages/choose?code=${router.params.code}&orderId=${res.data.orderId}`;
+        wx._paySuccUrl = `/childPackage/pages/choose?code=${
+          router.params.code
+        }&orderId=${res.data.orderId}&ignoreEvaluate=${router.params
+          .ignoreEvaluate ?? ""}`;
+        wx._payFailUrl = `/orderPackage/pages/order/gmsPay?code=${
+          router.params.code
+        }&ignoreEvaluate=${router.params.ignoreEvaluate ?? ""}`;
       } else {
-        const returnUrl = Base64.encode("/pages/evaluate/list?key=1");
-        wx._payUrl = `/childPackage/pages/manage?returnUrl=${returnUrl}`;
+        const returnUrl = Base64.encode(
+          `/pages/evaluate/list?key=1&ignoreEvaluate=${router.params
+            .ignoreEvaluate ?? ""}`
+        );
+        wx._paySuccUrl = `/childPackage/pages/manage?returnUrl=${returnUrl}&ignoreEvaluate=${router
+          .params.ignoreEvaluate ?? ""}`;
+        wx._payFailUrl = `/orderPackage/pages/order/gmsPay?code=${
+          router.params.code
+        }&ignoreEvaluate=${router.params.ignoreEvaluate ?? ""}`;
       }
       navigateTo({
         url: `/pages/other/webView?url=${Base64.encode(payRes.data)}`,

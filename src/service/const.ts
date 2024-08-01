@@ -14,7 +14,7 @@ export enum ScaleTableCode {
   GMS,
   BRAIN_GMS,
   LEIBO_BRAIN,
-  LEIBO_GMS,
+  LEIBO_GMS, // 0-1
   Griffiths,
   Product88 = 33,
   Duoyuan = 41,
