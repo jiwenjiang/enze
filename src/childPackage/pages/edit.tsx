@@ -315,6 +315,7 @@ export default function App() {
     if (router.params.returnUrl) {
       const url = Base64.decode(router.params.returnUrl);
       navigateTo({ url });
+      return
     }
     const pages = getCurrentPages();
 

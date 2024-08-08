@@ -19,6 +19,7 @@ export default function App() {
   const router = useRouter();
   const [page, setPage] = useState({ pageNo: 1, pageSize: 1000 });
   const [active, setActive] = useState(0);
+  const [ignoreEvaluate, setIgnoreEvaluate] = useState("");
   const [data, setData] = useState<any>([]);
 
   const start = () => {
@@ -57,8 +58,6 @@ export default function App() {
         url: `/evaluatePackage/pages/ability?childId=${data[active]?.id}&age=${data[active]?.birthdayDate}&code=${router.params.code}&orderId=${router.params.orderId}`,
       });
     } else {
-      if (router.params.ignoreEvaluate === "1") {
-      }
       navigateTo({
         url: `/pages/evaluate/step?childId=${data[active]?.id}&age=${data[active]?.birthdayDate}&code=${router.params.code}&orderId=${router.params.orderId}`,
       });
@@ -66,18 +65,22 @@ export default function App() {
   };
 
   const submit = async () => {
-    let params: any = {
-      childrenId: data[active]?.id,
-      scaleTableCode: router.params.code ?? 9,
-      answers: [],
-      orderId: router.params.orderId,
-    };
-    await request({
-      url: "/scaleRecord/withoutAnswer/save",
-      data: params,
-      method: "POST",
-    });
-    navigateTo({ url: "/evaluatePackage/pages/inHospital" });
+    if (ignoreEvaluate?.includes("1")) {
+      let params: any = {
+        childrenId: data[active]?.id,
+        scaleTableCode: router.params.code ?? 9,
+        answers: [],
+        orderId: router.params.orderId,
+      };
+      await request({
+        url: "/scaleRecord/withoutAnswer/save",
+        data: params,
+        method: "POST",
+      });
+      navigateTo({ url: "/evaluatePackage/pages/inHospital" });
+    } else {
+      start();
+    }
   };
 
   const manage = () => {
@@ -102,6 +105,7 @@ export default function App() {
     (async () => {
       const res = await request({ url: "/children/list", data: page });
       setData(res.data.children);
+      setIgnoreEvaluate(router.params.ignoreEvaluate ?? "");
     })();
   });
 
@@ -150,17 +154,11 @@ export default function App() {
             </View>
           ))}
         </View>
-        {data.length > 0 && (
+        {data?.length > 0 && (
           <View className={styles.bottom}>
-            {router.params.ignoreEvaluate === "1" ? (
-              <View onClick={submit} className="primary-btn">
-                提交数据
-              </View>
-            ) : (
-              <View onClick={start} className="primary-btn">
-                开始评测
-              </View>
-            )}
+            <View onClick={submit} className="primary-btn">
+              {ignoreEvaluate?.includes("1") ? "提交数据" : "开始评测"}
+            </View>
           </View>
         )}
       </View>

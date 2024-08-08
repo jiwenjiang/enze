@@ -70,7 +70,6 @@ export const Base64 = {
     } // Whend
 
     output = Base64._utf8_decode(output);
-    console.log("🚀 ~ file: utils.ts:72 ~ output:", String(output).trim());
 
     return String(output);
   }, // End Function decode

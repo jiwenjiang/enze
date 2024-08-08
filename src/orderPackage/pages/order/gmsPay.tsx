@@ -49,7 +49,7 @@ export default function App() {
       data: {
         scaleTableCode: router.params.code,
         type: EvaluateType.ZHINENG,
-        useWay: router.params.ignoreEvaluate ? 2 : 1,
+        useWay: router.params.ignoreEvaluate === "1" ? 2 : 1,
       },
     });
     if (!res.data.hasPaidOrder) {
@@ -85,7 +85,7 @@ export default function App() {
         invoiceId: [0],
         type: EvaluateType.ZHINENG,
         workScheduleId: 0,
-        useWay: router.params.ignoreEvaluate ? 2 : 1,
+        useWay: router.params.ignoreEvaluate === "1" ? 2 : 1,
       },
     });
     if (!res.data.hasPaidOrder) {
@@ -102,12 +102,12 @@ export default function App() {
           router.params.code
         }&ignoreEvaluate=${router.params.ignoreEvaluate ?? ""}`;
       } else {
-        const returnUrl = Base64.encode(
-          `/pages/evaluate/list?key=1&ignoreEvaluate=${router.params
-            .ignoreEvaluate ?? ""}`
-        );
-        wx._paySuccUrl = `/childPackage/pages/manage?returnUrl=${returnUrl}&ignoreEvaluate=${router
-          .params.ignoreEvaluate ?? ""}`;
+        const returnUrl = router.params.ignoreEvaluate
+          ? Base64.encode(
+              `/pages/evaluate/list?key=1&ignoreEvaluate=${router.params.ignoreEvaluate}`
+            )
+          : Base64.encode(`/pages/evaluate/list?key=1`);
+        wx._paySuccUrl = `/childPackage/pages/manage?returnUrl=${returnUrl}}`;
         wx._payFailUrl = `/orderPackage/pages/order/gmsPay?code=${
           router.params.code
         }&ignoreEvaluate=${router.params.ignoreEvaluate ?? ""}`;
