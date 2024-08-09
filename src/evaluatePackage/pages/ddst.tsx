@@ -1,10 +1,10 @@
 import Box from "@/comps/Box";
 import ChooseChild from "@/comps/ChooseChild";
-import { ScaleTableCode } from "@/service/const";
+import { DDST_Status, ScaleTableCode } from "@/service/const";
 import request, { envHost } from "@/service/request";
 import { Base64 } from "@/service/utils";
 import { Dialog, Notify, Popup } from "@taroify/core";
-import { QuestionOutlined } from "@taroify/icons";
+import { Arrow, QuestionOutlined } from "@taroify/icons";
 import { Button, Image, Text, View } from "@tarojs/components";
 import { getStorageSync, navigateTo } from "@tarojs/taro";
 import dayjs from "dayjs";
@@ -40,14 +40,12 @@ export default function App() {
 
   const getList = async (v) => {
     const res = await request({
-      url: "/sleep/assessment/list",
+      url: "/ddst/list",
       data: {
         childrenId: v.id,
-        pageNo: 1,
-        pageSize: 1000,
       },
     });
-    setData(res.data.list);
+    setData(res.data);
     console.log("🚀 ~ getList ~ res:", res);
   };
 
@@ -103,6 +101,10 @@ export default function App() {
     });
   };
 
+  const findItem = (v) => {
+    return Object.values(DDST_Status).find((c) => c.value === v.status);
+  };
+
   return (
     <View className={styles2.page}>
       <View className={cls(styles.index, "common-bg")}>
@@ -126,25 +128,54 @@ export default function App() {
         {data?.map((c: any, i) => (
           <View key={i} className={styles2.card}>
             <View className={styles2.item}>
-              <View className={styles2.label}>年龄</View>
-              <View className={styles2.value}>{c.age}</View>
+              <View
+                className={styles2.label}
+                style={{
+                  fontSize: 16,
+                  fontWeight: 500,
+                  width: 100,
+                  color: "#181818",
+                }}
+              >
+                {c.name}{" "}
+              </View>
+              <View className={styles2.value}>
+                <Text
+                  className={styles2.tag}
+                  style={{ backgroundColor: findItem(c)?.color }}
+                >
+                  {findItem(c)?.label}
+                </Text>
+              </View>
+              {c.status === DDST_Status.JIXINGZHONG.value && <Arrow />}
             </View>
             <View className={styles2.item}>
-              <View className={styles2.label}>建议填写时间</View>
-              <View className={styles2.value}>{c.time}</View>
-            </View>
-            <View className={styles2.line}></View>
-            <View className={styles2.btnBox}>
-              <View className={styles2.btn1} onClick={() => toReport(c)}>
-                去筛查
+              <View
+                className={styles2.label}
+                style={{ width: 80, marginRight: 20 }}
+              >
+                建议填写时间
               </View>
-              <View className={styles2.btn1} onClick={() => toReport(c)}>
-                查看报告
-              </View>
-              <View className={styles2.btn2} onClick={() => gotoDetail(c.id)}>
-                测试详情
+              <View className={styles2.value}>
+                {c.suggestStartTime}~{c.suggestEndTime}
               </View>
             </View>
+            {c.status === DDST_Status.YIWANCHENG.value && (
+              <View>
+                <View className={styles2.line}></View>
+                <View className={styles2.btnBox}>
+                  <View className={styles2.btn1} onClick={() => toReport(c)}>
+                    查看报告
+                  </View>
+                  <View
+                    className={styles2.btn2}
+                    onClick={() => gotoDetail(c.id)}
+                  >
+                    量表详情
+                  </View>
+                </View>
+              </View>
+            )}
           </View>
         ))}
       </View>

@@ -20,7 +20,7 @@ export enum ScaleTableCode {
   Duoyuan = 41,
   Shuimian3to12 = 42,
   ZHUANZHULI,
-  XUEXINENGLI
+  XUEXINENGLI,
 }
 
 export enum OrderStatus {
@@ -60,3 +60,26 @@ export enum categoryEnum {
   isXianLiTi,
   isLingDaoYi,
 }
+
+export const DDST_Status = {
+  JIXINGZHONG: {
+    label: "进行中",
+    value: 1,
+    color: "#47aaf5",
+  },
+  WEIKAISHI: {
+    label: "未开始",
+    value: 2,
+    color: "#838688",
+  },
+  YIWANCHENG: {
+    label: "已完成",
+    value: 3,
+    color: "#11BD8C",
+  },
+  YIGUOSHIJIAN: {
+    label: "已过时间",
+    value: 4,
+    color: "#ded225",
+  },
+};
