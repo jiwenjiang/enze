@@ -27,6 +27,7 @@ export default function App() {
     cover: "",
     learningDisability: "",
     showInHospital: "",
+    ddst: "",
   });
 
   const channelJudge = () => {
@@ -140,6 +141,20 @@ export default function App() {
     // });
   }, []);
 
+  const free = async () => {
+    if (wx._unLogin) {
+      navigateTo({
+        url: `/pages/login/index?returnUrl=${"/pages/index/index"}`,
+      });
+    } else {
+      triggerSubscrip(async () => {
+        navigateTo({
+          url: `/evaluatePackage/pages/ddst`,
+        });
+      });
+    }
+  };
+
   return (
     <View>
       <View
@@ -176,6 +191,17 @@ export default function App() {
               onClick={() => check(ScaleTableCode.LEIBO_GMS)}
             ></Image>
           </View>
+          {staticData.ddst && (
+            <View className={styles.bannerImgBox}>
+              <Image
+                className={styles.cardImg}
+                src={staticData.ddst}
+                style={{ height: 160, width: 375 }}
+                onClick={() => free()}
+              ></Image>
+            </View>
+          )}
+
           {staticData.showInHospital && (
             <View className={styles.bannerImgBox}>
               <Image

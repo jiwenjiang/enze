@@ -48,7 +48,6 @@ const request = (options: {
                 duration: 500
               });
             }
-
             if (request.data?.code === 2 && !options.notLogin && options.checkLogin) {
               const pages = getCurrentPages();
               const path = pages[pages.length - 1].route;

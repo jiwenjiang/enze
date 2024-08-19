@@ -7,6 +7,9 @@ import Taro, {
 import { useEffect, useRef, useState } from "react";
 import request from "./request";
 
+const accountInfo = wx.getAccountInfoSync();
+const env = accountInfo.miniProgram.envVersion;
+
 export function triggerSubscrip(cb?) {
   const enzeTempId = "4Sh3mhpfFVYApiovRXvlomBY8p7zNDg4Sdhk1DaFtUc";
   // const enzeTempId = "WazgebdTA_-hWtIvKM1b3c___7qjF6qRs-YkhJqfhGI";
@@ -178,9 +181,6 @@ export function useAuth() {
       if (res.code === 0) {
         console.log("🚀 ~ file: hook.ts:145 ~ getPortal ~ res:", res);
         wx._frontPage = res.data.frontPage;
-        // Taro.reLaunch({
-        //   url: `/pages/index/index?channel=${wx._frontPage}`
-        // });
         if (typeof cb === "function") {
           cb?.(res.data);
         }
@@ -214,8 +214,8 @@ export function useChannel(cb?: Function) {
       const matchArr2 = decodedStr.match(/channel=([^&]*)/); // 使用正则表达式匹配 channel 参数
       const orgId = matchArr1?.[1]; // 获取匹配到的内容
       const channel = matchArr2?.[1]; // 获取匹配到的内容
-      setStorageSync("orgId", orgId);
-      setStorageSync("channel", channel);
+      setStorageSync(`${env}_orgId`, orgId);
+      setStorageSync(`${env}_channel`, channel);
 
       wx._orgId = orgId;
       wx._channel = channel;
@@ -223,12 +223,12 @@ export function useChannel(cb?: Function) {
       cb?.();
     }
     if (router.params.orgId) {
-      setStorageSync("orgId", router.params.orgId);
+      setStorageSync(`${env}_orgId`, router.params.orgId);
       wx._orgId = router.params.orgId;
     }
     if (router.params.channel) {
       wx._channel = router.params.channel;
-      setStorageSync("channel", router.params.channel);
+      setStorageSync(`${env}_channel`, router.params.channel);
       cb?.();
     }
     if (

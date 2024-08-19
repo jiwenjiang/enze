@@ -36,6 +36,7 @@ export default {
         "pages/abilityDetail",
         "pages/ddst",
         "pages/ddst-photo-list",
+        "pages/ddst-detail",
         "pages/inHospital",
       ],
     },

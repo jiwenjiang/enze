@@ -106,9 +106,12 @@ export default function App() {
       });
       return;
     }
-    navigateTo({
-      url: `/pages/evaluate/previewReport?id=${item.id}&name=${item.scaleName}`,
-    });
+    if ([45, 46, 47, 48, 49, 50, 51, 52].includes(item.scaleTableCode)) {
+      navigateTo({
+        url: `/evaluatePackage/pages/ddst-detail?id=${item.id}&name=${item.scaleName}`,
+      });
+      return;
+    }
   };
 
   const goDetail = (item) => {
@@ -124,6 +127,12 @@ export default function App() {
       });
       return;
     }
+    // if ([45, 46, 47, 48, 49, 50, 51, 52].includes(item.scaleTableCode)) {
+    //   navigateTo({
+    //     url: `/evaluatePackage/pages/ddst-detail?id=${item.id}&name=${item.scaleName}`,
+    //   });
+    //   return;
+    // }
     navigateTo({
       url: `/pages/evaluate/detail?id=${item.id}`,
     });

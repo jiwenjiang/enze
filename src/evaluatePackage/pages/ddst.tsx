@@ -101,6 +101,14 @@ export default function App() {
     });
   };
 
+  const goto = (c) => {
+    if (c.status === DDST_Status.JIXINGZHONG.value) {
+      navigateTo({
+        url: `/evaluatePackage/pages/ddst-photo-list?code=${c.code}&childrenId=${currentChildren.id}&age=${currentChildren?.birthdayDate}`,
+      });
+    }
+  };
+
   const findItem = (v) => {
     return Object.values(DDST_Status).find((c) => c.value === v.status);
   };
@@ -126,7 +134,7 @@ export default function App() {
           }
         ></Box>
         {data?.map((c: any, i) => (
-          <View key={i} className={styles2.card}>
+          <View key={i} className={styles2.card} onClick={() => goto(c)}>
             <View className={styles2.item}>
               <View
                 className={styles2.label}
@@ -147,7 +155,9 @@ export default function App() {
                   {findItem(c)?.label}
                 </Text>
               </View>
-              {c.status === DDST_Status.JIXINGZHONG.value && <Arrow />}
+              {c.status === DDST_Status.JIXINGZHONG.value && (
+                <Arrow className={styles2.arrowIcon} />
+              )}
             </View>
             <View className={styles2.item}>
               <View
@@ -164,13 +174,13 @@ export default function App() {
               <View>
                 <View className={styles2.line}></View>
                 <View className={styles2.btnBox}>
-                  <View className={styles2.btn1} onClick={() => toReport(c)}>
-                    查看报告
-                  </View>
                   <View
-                    className={styles2.btn2}
+                    className={styles2.btn1}
                     onClick={() => gotoDetail(c.id)}
                   >
+                    查看报告
+                  </View>
+                  <View className={styles2.btn2} onClick={() => toReport(c.id)}>
                     量表详情
                   </View>
                 </View>
