@@ -340,15 +340,15 @@ function Card() {
                         全身运动质量评估结果：
                         <Text
                           className={
-                            report.scaleResult?.developmentRisk !== 1
+                            report.scaleResult?.gmsResult?.stage !== '1'
                               ? styles.evaRed
                               : styles.evaGreen
                           }
                         >
                           {" "}
-                          {report.scaleResult?.developmentRisk === 2
+                          {report.scaleResult?.gmsResult?.stage === '2'
                             ? "有异常"
-                            : report.scaleResult?.developmentRisk === 3
+                            : report.scaleResult?.gmsResult?.stage === '3'
                             ? report.scaleResult?.gmsResult?.stageResult
                             : "无异常"}
                         </Text>

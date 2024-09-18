@@ -102,6 +102,14 @@ export default function App() {
   };
 
   const goto = (c) => {
+    if (c.status === DDST_Status.WEIKAISHI.value) {
+      Notify.open({ color: "warning", message: "该月龄筛查未开始" });
+      return;
+    }
+    if (c.status === DDST_Status.YIGUOSHIJIAN.value) {
+      Notify.open({ color: "warning", message: "该月龄筛查已过时间" });
+      return;
+    }
     if (c.status === DDST_Status.JIXINGZHONG.value) {
       navigateTo({
         url: `/evaluatePackage/pages/ddst-photo-list?code=${c.code}&childrenId=${currentChildren.id}&age=${currentChildren?.birthdayDate}`,

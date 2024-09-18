@@ -150,7 +150,7 @@ export default function App() {
       return;
     }
     let params: any = {
-      ...data[active],
+      answers: [{ ...data[active], questionSn: data[active].sn }],
       childrenId: router.params.childrenId,
       scaleTableCode: router.params.code ?? 9,
       // orderId:
@@ -232,7 +232,7 @@ export default function App() {
                   isExpand && styles["constent-visible"]
                 )}
               >
-                {data[active]?.carousels?.length > 0 && (
+                {data[active]?.videos?.length > 0 && (
                   <Swiper
                     autoplay={false}
                     indicatorDots={true}
@@ -253,7 +253,7 @@ export default function App() {
                   </Swiper>
                 )}
 
-                {guides.pictures?.length > 0 && (
+                {data[active]?.pictures?.length > 0 && (
                   <View className={styles.cardBox}>
                     <View className={styles.title}>拍摄指导图片 </View>
                     <Swiper
